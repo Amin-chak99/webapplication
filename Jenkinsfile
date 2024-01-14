@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat 'docker-compose up -d'
+                sh 'docker-compose up -d'
             }
         }
         stage('push image to dockerhub ') {
@@ -12,10 +12,10 @@ pipeline {
                 script {
                     withCredentials([usernamePassword(credentialsId: 'MyDocker', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                         
-                        bat "echo $PASSWORD | docker login -u $USERNAME --password-stdin"
-                        bat "docker tag aminhediifrontimg aminhedi/aminhediifrontimg"
+                        sh "echo $PASSWORD | docker login -u $USERNAME --password-stdin"
+                        sh "docker tag aminhediifrontimg aminhedi/aminhediifrontimg"
                         
-                        bat "docker push aminhedi/aminhediifrontimg"
+                        sh "docker push aminhedi/aminhediifrontimg"
                     }
                 }
             }
