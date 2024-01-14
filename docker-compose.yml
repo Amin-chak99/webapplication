@@ -8,6 +8,6 @@ services:
     image: ${DOCKER_IMAGE_NAME:-hediaminfrontimg}:${TAG:-latest}
     container_name: ${DOCKER_CONTAINER_NAME:-hediaminContainer}
     ports:
-      - ${APP_PORT:-3000}:3000    
+      - ${APP_PORT:-3001}:3001    
     restart: unless-stopped
 
