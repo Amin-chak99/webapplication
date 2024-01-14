@@ -5,8 +5,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile                     
-    image: ${DOCKER_IMAGE_NAME:-aminhediifrontimg}:${TAG:-latest}
-    container_name: ${DOCKER_CONTAINER_NAME:-aminHediiContainer}
+    image: ${DOCKER_IMAGE_NAME:-hediaminfrontimg}:${TAG:-latest}
+    container_name: ${DOCKER_CONTAINER_NAME:-hediaminContainer}
     ports:
       - ${APP_PORT:-3000}:3000    
     restart: unless-stopped
