@@ -12,7 +12,7 @@ pipeline {
                 script {
                     withCredentials([usernamePassword(credentialsId: 'MyDocker', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                         
-                        bat "echo $PASSWORD | docker login -u aminhedi -p  --password-stdin"
+                        bat "echo $PASSWORD | docker login -u $USERNAME --password-stdin"
                         bat "docker tag aminhediifrontimg aminhedi/aminhediifrontimg"
                         
                         bat "docker push aminhedi/aminhediifrontimg"
