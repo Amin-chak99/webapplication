@@ -26,7 +26,7 @@ COPY nginx/default.conf /etc/nginx/conf.d/
 COPY --from=build /app/build /usr/share/nginx/html
 
 
-EXPOSE 3003
+EXPOSE 3000
 
 # Start Nginx
 CMD ["nginx", "-g", "daemon off;"]
