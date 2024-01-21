@@ -13,9 +13,9 @@ pipeline {
                     withCredentials([usernamePassword(credentialsId: 'MyDocker', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                         
                         bat "echo $PASSWORD | docker login -u $USERNAME --password-stdin"
-                        bat "docker tag hediaminfrontimg aminhedi/hediaminfrontimg"
+                        bat "docker tag hediaminv1frontimg aminhediv1/hediaminv1frontimg"
                         
-                        bat "docker push aminhedi/hediaminfrontimg"
+                        bat "docker push aminhediv1/hediaminv1frontimg"
                     }
                 }
             }
